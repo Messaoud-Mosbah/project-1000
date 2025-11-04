@@ -4,12 +4,13 @@ require('dotenv').config();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
+const dbURI = "mongodb+srv://messaoud:timamswd@cluster0.3hpwail.mongodb.net/project1";
 
 // express app
 const app = express();
 
 // connect to mongodb & listen for requests
-mongoose.connect(process.env.DB_URI, {
+mongoose.connect(dbURI, {
   maxPoolSize: 20,
   minPoolSize: 5,
   maxIdleTimeMS: 30000,
